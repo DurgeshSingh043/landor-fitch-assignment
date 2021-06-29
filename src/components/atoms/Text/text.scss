@@ -1,0 +1,12 @@
+.text{
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 2.85714px;
+  color: #6D7278;
+  &.caption{
+    color: #006666;
+  }
+}

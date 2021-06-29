@@ -1,0 +1,13 @@
+@import '../../../styles';
+
+.breadcrum{
+  display: flex;
+  &__label{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: pxToRem(16);
+    line-height: pxToRem(23);
+    color: $breadcrum-color;
+  }
+}

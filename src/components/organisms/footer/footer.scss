@@ -1,0 +1,10 @@
+@import '../../../styles';
+
+.footer{
+  padding: pxToRem(20);
+  background-color: $black;
+  color: $white;
+  &--copyright-text{
+    font-size: pxToRem(14);
+  }
+}

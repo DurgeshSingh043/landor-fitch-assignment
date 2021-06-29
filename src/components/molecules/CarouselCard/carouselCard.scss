@@ -1,0 +1,54 @@
+@import '../../../styles';
+
+.carousel-card{
+  display: flex;
+  flex-direction: column;
+  margin-right: pxToRem(12);
+  &__image{
+    position: relative;
+    img{
+      width: 100%;
+    }
+    &__hover-text{
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: pxToRem(8) pxToRem(16);
+      text-align: right;
+      background: #FFFFFF;
+      mix-blend-mode: normal;
+      opacity: 0.6;
+      font-size: pxToRem(16);
+      color: $black;
+      font-weight: 400;
+    }
+    .display{
+      display: none;
+    }
+    &:hover{
+      .display{
+        display: block;
+      }
+    }
+  }
+  &__content{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    &__left{
+      display: flex;
+      flex-direction: column;
+      .text{
+        font-size: pxToRem(14);
+      }
+    }
+    &__right{
+      .text{
+        font-size: pxToRem(16);
+      }
+    }
+  }
+}
