@@ -22,8 +22,9 @@
       margin: 0 pxToRem(26);
       padding: pxToRem(10) 0;
       text-decoration: none;
+      border-bottom: 2px solid transparent;
       &.active{
-        border-bottom: 2px solid #006666;
+        border-bottom-color: $caption-color;
       }
     }
   }
