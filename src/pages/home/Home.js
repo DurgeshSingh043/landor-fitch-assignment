@@ -30,16 +30,18 @@ const Home = () => {
     <div className="main-content">
       <Breadcrum text={breadcrum} />
       <div className="main-content__nav" onClick={navClickHandler}>
-        <label className="upper mr-2">Explore more</label>
-        <Button name="left">
-          <Icon name={ICONS.ArrowLeft} />
-        </Button>
-        <Button name="right" className="ml-2">
-          <Icon name={ICONS.ArrowRight} />
-        </Button>
+        <Title text={title} component="h1" />
+        <div className="main-content__nav__cta">
+          <label className="upper mr-2">Explore more</label>
+          <Button name="left">
+            <Icon name={ICONS.ArrowLeft} />
+          </Button>
+          <Button name="right" className="ml-2">
+            <Icon name={ICONS.ArrowRight} />
+          </Button>
+        </div>
       </div>
       <div className="main-content__header">
-        <Title text={title} component="h1" />
         <Text className="caption mt-2" text={subTitle} />
         <Text className="mx-3" text={description} />
       </div>
@@ -49,7 +51,7 @@ const Home = () => {
           {...carouselConfig}
         >
           {carouselData.map((item) => (
-            <CarouselCard {...item} />
+            <CarouselCard key={item.imageUrl} {...item} />
           ))}
         </Slider>
       </div>

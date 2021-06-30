@@ -1,0 +1,7 @@
+@mixin screen($name) {
+  @if $name == desktop {
+    @media only screen and (min-width: 992px) {
+      @content;
+    }
+  }
+}

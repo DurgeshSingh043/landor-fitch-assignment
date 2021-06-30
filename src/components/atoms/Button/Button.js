@@ -1,3 +1,5 @@
+import { ICONS } from '../../../constants/_icons';
+import Icon from '../Icon';
 import './button.scss';
 
 const Button = ({ text, children, className, ...other }) => (
@@ -7,3 +9,31 @@ const Button = ({ text, children, className, ...other }) => (
 );
 
 export default Button;
+
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`next-arrow ${className}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <Icon name={ICONS.ArrowRight} />
+    </div>
+  );
+};
+
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`prev-arrow ${className}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <Icon name={ICONS.ArrowLeft} />
+    </div>
+  );
+};
+
+export { NextArrow, PrevArrow };

@@ -6,3 +6,15 @@
   justify-content: center;
   align-items: center;
 }
+.next-arrow, .prev-arrow{
+  &::before{
+    content: none;
+  }
+  &.slick-disabled{
+    display: none;
+  }
+  .icon{
+    height: pxToRem(36);
+    width: pxToRem(36);
+  }
+}
