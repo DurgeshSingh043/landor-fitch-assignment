@@ -1,13 +1,23 @@
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import Home from './pages/home/Home';
-import './app.scss';
 import PageTemplate from './components/templates/pageTemplate';
+import ErrorBoundary from './ErrorBoundary';
+
+import './app.scss';
 
 export default function App() {
   return (
     <div className="App">
-      <PageTemplate>
-        <Home />
-      </PageTemplate>
+      <ErrorBoundary>
+        <PageTemplate>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={Home} />
+            </Switch>
+          </Router>
+        </PageTemplate>
+      </ErrorBoundary>
     </div>
   );
 }

@@ -18,15 +18,29 @@ const getSvgIcon = (name) => {
   }
 };
 
-const Icon = ({ name = 'user', className, ...other }) => {
-  return (
-    <img
-      className={`icon ${className}`}
-      alt={name}
-      src={getSvgIcon(name)}
-      {...other}
-    ></img>
-  );
+const Icon = ({ name = 'user', className, isTab = false, ...other }) => {
+  if (isTab) {
+    const onIconClickHandler = (event) => event.preventDefault();
+    return (
+      <a href="/" onClick={onIconClickHandler}>
+        <img
+          className={`icon ${className}`}
+          alt={name}
+          src={getSvgIcon(name)}
+          {...other}
+        ></img>
+      </a>
+    );
+  } else {
+    return (
+      <img
+        className={`icon ${className}`}
+        alt={name}
+        src={getSvgIcon(name)}
+        {...other}
+      ></img>
+    );
+  }
 };
 
 export default Icon;

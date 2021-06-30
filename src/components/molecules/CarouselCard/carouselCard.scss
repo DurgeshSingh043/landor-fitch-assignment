@@ -12,7 +12,7 @@
     img{
       width: 100%;
     }
-    &__hover-text{
+    .hover-text{
       position: absolute;
       top: auto;
       bottom: 0;
@@ -20,12 +20,17 @@
       right: 0;
       padding: pxToRem(8) pxToRem(16);
       text-align: right;
-      background: #FFFFFF;
+      background: $white;
       mix-blend-mode: normal;
       opacity: 0.6;
-      font-size: pxToRem(16);
       color: $black;
       font-weight: 400;
+      font-size: pxToRem(16);
+      line-height: pxToRem(22);
+      letter-spacing: pxToRem(1);
+      @include screen(desktop){
+        line-height: pxToRem(21);
+      }
     }
     .display{
       display: none;
@@ -44,13 +49,27 @@
     &__left{
       display: flex;
       flex-direction: column;
-      .text{
+      .description{
         font-size: pxToRem(14);
+        line-height: pxToRem(19);
+        letter-spacing: pxToRem(1.33);
+        color: $primary-color;
+        text-transform: uppercase;
+        @include screen(desktop){
+          letter-spacing: pxToRem(2);
+        }
       }
     }
     &__right{
       .text{
         font-size: pxToRem(16);
+        line-height: pxToRem(22);
+        letter-spacing: pxToRem(1);
+        color: $primary-color;
+        @include screen(desktop){
+          font-size: pxToRem(18);
+          line-height: pxToRem(25);
+        }
       }
     }
   }

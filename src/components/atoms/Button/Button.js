@@ -15,10 +15,10 @@ const NextArrow = (props) => {
   return (
     <div
       className={`next-arrow ${className}`}
-      style={{ ...style }}
+      //style={{ ...style }}
       onClick={onClick}
     >
-      <Icon name={ICONS.ArrowRight} />
+      <Icon isTab={true} name={ICONS.ArrowRight} />
     </div>
   );
 };
@@ -28,10 +28,10 @@ const PrevArrow = (props) => {
   return (
     <div
       className={`prev-arrow ${className}`}
-      style={{ ...style }}
+      //style={{ ...style }}
       onClick={onClick}
     >
-      <Icon name={ICONS.ArrowLeft} />
+      <Icon isTab={true} name={ICONS.ArrowLeft} />
     </div>
   );
 };

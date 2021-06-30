@@ -1,12 +1,19 @@
 @import '../../../styles';
 
 .button{
-  padding: pxToRem(4) pxToRem(8);
+  padding: pxToRem(6) pxToRem(10);
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  //transform: matrix(-1, 0, 0, 1, 0, 0);
+  background-color: $white;
+  &:focus{
+    box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+  }
 }
 .next-arrow, .prev-arrow{
+  top: 40%;
   &::before{
     content: none;
   }
@@ -17,4 +24,8 @@
     height: pxToRem(36);
     width: pxToRem(36);
   }
+}
+
+.prev-arrow{
+  left: -50px;
 }

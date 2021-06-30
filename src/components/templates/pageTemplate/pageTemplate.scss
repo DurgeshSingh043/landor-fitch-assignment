@@ -5,7 +5,10 @@
   flex-direction: column;
   min-height: 100vh;
   &__main{
-    margin: pxToRem(20) 0 pxToRem(20) pxToRem(8);
+    margin: pxToRem(20) 0 pxToRem(20) pxToRem(20);
     flex: 1;
+    @include screen(desktop){
+      margin: pxToRem(40) 0 pxToRem(40) pxToRem(48);
+    }
   }
 }

@@ -1,7 +1,12 @@
 @import '../../../styles';
 
 .label{
-  font-size: pxToRem(16);
+  font-size: pxToRem(14);
+  line-height: pxToRem(18);
+  letter-spacing: pxToRem(3);
+  @include screen(desktop){
+    line-height: pxToRem(14);
+  }
   &.upper{
     text-transform: uppercase;
   }

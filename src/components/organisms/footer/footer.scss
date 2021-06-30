@@ -6,5 +6,10 @@
   color: $white;
   &--copyright-text{
     font-size: pxToRem(14);
+    line-height: pxToRem(19);
+    opacity: 0.8;
+  }
+  @include screen(desktop){
+    padding: pxToRem(30) pxToRem(130);
   }
 }

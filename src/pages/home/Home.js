@@ -1,4 +1,6 @@
-import { Button, Icon, Title, Text } from '../../components/atoms';
+import { useRef } from 'react';
+
+import { Button, Icon, Title, Text, Label } from '../../components/atoms';
 import { Breadcrum, CarouselCard } from '../../components/molecules';
 import { ICONS } from '../../constants/_icons';
 import Slider from 'react-slick';
@@ -7,8 +9,8 @@ import './home.scss';
 import { carouselConfig } from '../../configs/carousel';
 import { homePageData } from '../../apis/mocks/homePage';
 
-let slickSliderRef = null;
 const Home = () => {
+  const slickSliderRef = useRef(null);
   const {
     breadcrum,
     title,
@@ -17,37 +19,44 @@ const Home = () => {
     carouselData,
   } = homePageData;
 
-  const navClickHandler = (event) => {
-    const name = event?.target?.getAttribute('name');
+  const onButtonClickHandler = (name) => {
     if (name === 'left') {
-      slickSliderRef?.slickPrev();
+      slickSliderRef?.current?.slickPrev();
     } else if (name === 'right') {
-      slickSliderRef?.slickNext();
+      slickSliderRef?.current?.slickNext();
     }
   };
 
   return (
     <div className="main-content">
       <Breadcrum text={breadcrum} />
-      <div className="main-content__nav" onClick={navClickHandler}>
+      <div className="main-content__nav">
         <Title text={title} component="h1" />
         <div className="main-content__nav__cta">
-          <label className="upper mr-2">Explore more</label>
-          <Button name="left">
+          <Label className="upper mr-2">Explore more</Label>
+          <Button name="left" onClick={() => onButtonClickHandler('left')}>
             <Icon name={ICONS.ArrowLeft} />
           </Button>
-          <Button name="right" className="ml-2">
+          <Button
+            name="right"
+            className="ml-2"
+            onClick={() => onButtonClickHandler('right')}
+          >
             <Icon name={ICONS.ArrowRight} />
           </Button>
         </div>
       </div>
       <div className="main-content__header">
-        <Text className="caption mt-2" text={subTitle} />
-        <Text className="mx-3" text={description} />
+        <Text className="caption" text={subTitle} />
+        <Text
+          className="main-content__header__description"
+          text={description}
+        />
       </div>
       <div className="main-content__carousel">
         <Slider
-          ref={(sliderRef) => (slickSliderRef = sliderRef)}
+          // ref={(sliderRef) => (slickSliderRef = sliderRef)}
+          ref={slickSliderRef}
           {...carouselConfig}
         >
           {carouselData.map((item) => (
