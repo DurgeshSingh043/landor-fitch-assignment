@@ -8,6 +8,7 @@
   box-sizing: border-box;
   //transform: matrix(-1, 0, 0, 1, 0, 0);
   background-color: $white;
+  cursor: pointer;
   &:focus{
     box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
   }
