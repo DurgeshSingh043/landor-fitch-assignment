@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 import { Button, Icon, Title, Text, Label } from '../../components/atoms';
 import { Breadcrum, CarouselCard } from '../../components/molecules';
@@ -9,7 +9,7 @@ import './home.scss';
 import { carouselConfig } from '../../configs/carousel';
 import { homePageData } from '../../apis/mocks/homePage';
 
-const Home = () => {
+const Home = React.memo(() => {
   const slickSliderRef = useRef(null);
   const {
     breadcrum,
@@ -19,13 +19,13 @@ const Home = () => {
     carouselData,
   } = homePageData;
 
-  const onButtonClickHandler = (name) => {
+  const onButtonClickHandler = useCallback((name) => {
     if (name === 'left') {
       slickSliderRef?.current?.slickPrev();
     } else if (name === 'right') {
       slickSliderRef?.current?.slickNext();
     }
-  };
+  }, []);
 
   return (
     <div className="main-content">
@@ -66,6 +66,6 @@ const Home = () => {
       </div>
     </div>
   );
-};
+});
 
 export default Home;
